@@ -1,0 +1,70 @@
+[
+    {
+        "file": "assets/bin/Data/Managed/Assembly-CSharp.dll",
+        "framework": "Unity"
+    },
+    {
+        "file": "NOTICE",
+        "framework": "Xamarin"
+    },
+    {
+        "file": "assemblies/System.Core.dll",
+        "framework": "Xamarin"
+    },
+    {
+        "file": "assemblies/System.dll",
+        "framework": "Xamarin"
+    },
+    {
+        "file": "assets/www/index.html",
+        "framework": "Cordova/PhoneGap"
+    },
+    {
+        "file": "assets/www/cordova_plugins.js",
+        "framework": "Cordova/PhoneGap"
+    },
+    {
+        "file": "assets/www/cordova.js",
+        "framework": "Cordova/PhoneGap"
+    },
+    {
+        "file": "assets/flutter_assets",
+        "framework": "Flutter"
+    },
+    {
+        "file": "assets/isolate_snapshot_data",
+        "framework": "Flutter"
+    },
+    {
+        "file": "assets/isolate_snapshot_instr",
+        "framework": "Flutter"
+    },
+    {
+        "file": "assets/vm_snapshot_data",
+        "framework": "Flutter"
+    },
+    {
+        "file": "assets/vm_snapshot_instr",
+        "framework": "Flutter"
+    },
+    {
+        "file": "assets/index.android.bundle",
+        "framework": "ReactNative"
+    },
+    {
+        "file": "assets/index.android.bundle.meta",
+        "framework": "ReactNative"
+    },
+    {
+        "file": "lib/x86/libhermes.so",
+        "framework": "ReactNative compiled with Hermes"
+    },
+    {
+        "file": "lib/x86_64/libhermes.so",
+        "framework": "ReactNative compiled with Hermes"
+    },
+    {
+        "file": "lib/arm64-v8a/libhermes.so",
+        "framework": "ReactNative compiled with Hermes"
+    }
+]
