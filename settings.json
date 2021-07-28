@@ -16,8 +16,16 @@
         "framework": "Xamarin"
     },
     {
-        "file": "assets/www/index.html",
-        "framework": "Cordova/PhoneGap"
+        "file": "assets/www/svg/logo-ionic.svg",
+        "framework": "Ionic Cordova"
+    },
+    {
+        "file": "assets/www/plugins/cordova-plugin-ionic-webview/src/www/util.js",
+        "framework": "Ionic Cordova"
+    },
+    {
+        "file": "assets/www/plugins/ionic-plugin-deeplinks/www/deeplink.js",
+        "framework": "Ionic Cordova"
     },
     {
         "file": "assets/www/cordova_plugins.js",

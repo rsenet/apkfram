@@ -40,11 +40,15 @@ $ python3 apkFram.py --file examples/tink.apk
 
 $ python3 apkFram.py --file examples/Unity_Loot\ Hunters.apk
 [!] Unity seems to be the best probability
+
+$ python3 apkfram.py --file examples/Apps.apk
+[!] Ionic Cordova seems to be the best answer
 ```
 
 Currently supported frameworks:
 
 * Cordova/PhoneGap
+* Ionic Cordova
 * Flutter
 * ReactNative
 * ReactNative compiled with Hermes
