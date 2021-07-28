@@ -50,7 +50,6 @@ Currently supported frameworks:
 * Cordova/PhoneGap
 * Ionic Cordova
 * Flutter
-* Flutter in debug mode
 * ReactNative
 * ReactNative compiled with Hermes
 * Unity
