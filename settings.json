@@ -56,6 +56,30 @@
         "framework": "Flutter"
     },
     {
+        "file": "assets/flutter_assets",
+        "framework": "Flutter (debug mode)"
+    },
+    {
+        "file": "assets/isolate_snapshot_data",
+        "framework": "Flutter (debug mode)"
+    },
+    {
+        "file": "assets/isolate_snapshot_instr",
+        "framework": "Flutter (debug mode)"
+    },
+    {
+        "file": "assets/vm_snapshot_data",
+        "framework": "Flutter (debug mode)"
+    },
+    {
+        "file": "assets/vm_snapshot_instr",
+        "framework": "Flutter (debug mode)"
+    },
+    {
+        "file": "assets/flutter_assets/kernel_blob.bin",
+        "framework": "Flutter (debug mode)"
+    },
+    {
         "file": "assets/index.android.bundle",
         "framework": "ReactNative"
     },
