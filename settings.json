@@ -78,5 +78,41 @@
     {
         "file": "lib/arm64-v8a/libhermes.so",
         "framework": "ReactNative compiled with Hermes"
-    }
+    },
+    {
+        "file": "lib/x86/libcorona.so",
+        "framework": "Corona SDK"
+    },
+    {
+        "file": "lib/x86_64/libcorona.so",
+        "framework": "Corona SDK"
+    },
+    {
+        "file": "lib/arm64-v8a/libcorona.so",
+        "framework": "Corona SDK"
+    },
+    {
+        "file": "lib/armeabi-v7a/libcorona.so",
+        "framework": "Corona SDK"
+    },
+    {
+        "file": "smali/com/kony",
+        "framework": "Kony"
+    },
+    {
+        "file": "lib/x86/libkonyjsvm.so",
+        "framework": "Kony"
+    },
+    {
+        "file": "lib/x86_64/libkonyjsvm.so",
+        "framework": "Kony"
+    },
+    {
+        "file": "lib/arm64-v8a/libkonyjsvm.so",
+        "framework": "Kony"
+    },
+    {
+        "file": "lib/armeabi-v7a/libkonyjsvm.so",
+        "framework": "Kony"
+    } 
 ]
