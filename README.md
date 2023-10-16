@@ -43,6 +43,12 @@ $ python3 apkFram.py --file examples/Unity_Loot\ Hunters.apk
 
 $ python3 apkfram.py --file examples/Apps.apk
 [!] Ionic Cordova seems to be the best answer
+
+$ python3 apkfram.py --file examples/Kony.apk
+[!] Kony seems to be the best answer
+
+$ python3 apkfram.py --file examples/Corona.apk
+[!] Corona SDK seems to be the best answer
 ```
 
 Currently supported frameworks:
@@ -54,6 +60,8 @@ Currently supported frameworks:
 * ReactNative compiled with Hermes
 * Unity
 * Xamarin
+* Kony
+* Corona SDK
 
 ## Author
 
