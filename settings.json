@@ -44,6 +44,10 @@
         "framework": "Flutter"
     },
     {
+        "file": "assets/flutter_assets/LICENSE",
+        "framework": "Flutter"
+    },
+    {
         "file": "assets/isolate_snapshot_data",
         "framework": "Flutter"
     },
