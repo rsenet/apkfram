@@ -20,6 +20,10 @@
         "framework": "Xamarin"
     },
     {
+        "file": "assemblies/assemblies.blob",
+        "framework": "Xamarin"
+    },    
+    {
         "file": "assets/www/svg/logo-ionic.svg",
         "framework": "Ionic Cordova"
     },
