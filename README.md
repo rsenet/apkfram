@@ -8,13 +8,14 @@ Print the help to get all necessary information
 
 ```bash
 $ python3 apkFram.py -h
-usage: apkFram.py [-h] [--file FILE]
+usage: apkFram.py [-h] [--file FILE] [-v]
 
 Android Framework Identifier
 
 optional arguments:
-  -h, --help   show this help message and exit
-  --file FILE  Specify your APK file
+  -h, --help     show this help message and exit
+  --file FILE    Specify your APK file
+  -v, --verbose  Also print the tools needed to read the source code
 ```
 
 You just have to specify the APK file in input to get the used framework:
@@ -53,6 +54,22 @@ $ python3 apkfram.py --file examples/Kony.apk
 $ python3 apkfram.py --file examples/Corona.apk
 [!] Corona SDK seems to be the best answer
 ```
+
+With `-v` / `--verbose`, apkFram also prints where the source code lives and the tools needed to read it, based on the detected framework:
+
+```bash
+$ python3 apkFram.py --file examples/tracio.apk --verbose
+[!] .NET MAUI seems to be the best answer
+[*] Signals matched: libaot-Microsoft.Maui.dll.so, libaot-Microsoft.Maui.Controls.dll.so
+[*] Source code location: assemblies/*.dll (plain or in assemblies.blob) or lib/<abi>/libaot-*.dll.so (AOT)
+[*] Tools to read the source code:
+     - ilspycmd               dotnet tool install -g ilspycmd
+     - ILSpy                  brew install --cask ilspy
+     - dotPeek                JetBrains dotPeek
+     - pyxamstore             https://github.com/jakev/pyxamstore  (unpack assemblies.blob store)
+```
+
+The per-framework tooling is configured in `tools.json`.
 
 Currently supported frameworks:
 

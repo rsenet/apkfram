@@ -3,8 +3,10 @@ import os
 import zipfile
 import json
 
-# settings.json lives at the project root, next to apkfram.py
-SETTINGS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "settings.json")
+# settings.json / tools.json live at the project root, next to apkfram.py
+ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SETTINGS = os.path.join(ROOT, "settings.json")
+TOOLS = os.path.join(ROOT, "tools.json")
 
 # Bytes read at a time when scanning an inner file (assembly store, blobs, ...)
 SCAN_CHUNK = 1024 * 1024
@@ -52,10 +54,11 @@ def rule_matches(rule, zipf, zip_file_list):
     return False
 
 
-def parse_apk(apk_path):
-    """Parse APK to identify the Framework used
+def scan_apk(apk_path):
+    """Scan an APK and return, per framework, its score and matched signals
 
     :param apk_path: Full path to the APK
+    :return: dict framework -> {"score": int, "signals": [matched files]}
     """
     result = {}
 
@@ -73,22 +76,66 @@ def parse_apk(apk_path):
         # several frameworks (e.g. the .NET assembly store used by both
         # Xamarin and .NET MAUI).
         if rule_matches(frame_info, zipf, zip_file_list):
-            result[framework] = result.get(framework, 0) + frame_info.get("weight", 1)
+            entry = result.setdefault(framework, {"score": 0, "signals": []})
+            entry["score"] += frame_info.get("weight", 1)
+            entry["signals"].append(frame_info["file"])
 
     return result
 
 
-def get_result(apk_path):
+def parse_apk(apk_path):
+    """Parse APK to identify the Framework used
+
+    :param apk_path: Full path to the APK
+    :return: dict framework -> score
+    """
+    return {fw: info["score"] for fw, info in scan_apk(apk_path).items()}
+
+
+def print_tools(framework):
+    """Print the tools needed to read the source code of a given framework
+
+    :param framework: the detected framework name
+    """
+    try:
+        with open(TOOLS, "r") as f:
+            tools = json.loads(f.read())
+    except (OSError, ValueError):
+        return
+
+    info = tools.get(framework)
+    if not info:
+        print("    No tooling reference available for this framework yet")
+        return
+
+    if info.get("source"):
+        print("[*] Source code location: %s" % info["source"])
+
+    print("[*] Tools to read the source code:")
+    for tool in info.get("tools", []):
+        print("     - %-22s %s" % (tool["name"], tool.get("ref", "")))
+
+
+def get_result(apk_path, verbose=False):
     """Get best result
 
     :param apk_path: Full path to the APK
+    :param verbose: also print detected signals and the reversing toolkit
     """
-    apk_parsed = parse_apk(apk_path)
+    apk_scan = scan_apk(apk_path)
 
-    if apk_parsed:
+    if apk_scan:
         # Highest total weight wins; framework name only breaks ties
-        best = max(apk_parsed.items(), key=lambda t: (t[1], t[0]))
-        print("[!] %s seems to be the best answer" % best[0])
+        best = max(apk_scan.items(), key=lambda t: (t[1]["score"], t[0]))
+        framework = best[0]
+        print("[!] %s seems to be the best answer" % framework)
+
+        if verbose:
+            print("[*] Signals matched: %s" % ", ".join(best[1]["signals"]))
+            print_tools(framework)
 
     else:
         print("[!] No framework detected")
+
+        if verbose:
+            print("[*] Likely a native app (Java/Kotlin). Tools: jadx, apktool, Ghidra")

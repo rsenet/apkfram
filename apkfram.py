@@ -14,6 +14,8 @@ short_desc  = "Android Framework Identifier"
 
 arg_parser = argparse.ArgumentParser(description=short_desc)
 arg_parser.add_argument('--file', help="Specify your APK file")
+arg_parser.add_argument('-v', '--verbose', action='store_true',
+                        help="Also print the tools needed to read the source code")
 u_args = arg_parser.parse_args()
 
 # Get variable
@@ -25,7 +27,7 @@ try:
             name, extension = os.path.splitext(apkFile)
 
             if ".apk" in extension:
-                parser.get_result(apkFile)
+                parser.get_result(apkFile, u_args.verbose)
 
             else:
                 print("[x] Error! Only APK files are allowed")

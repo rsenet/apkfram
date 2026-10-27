@@ -1,0 +1,78 @@
+{
+    "Cordova/PhoneGap": {
+        "source": "assets/www/ (HTML / CSS / JavaScript source, readable after unzip)",
+        "tools": [
+            { "name": "unzip", "ref": "extract assets/www/ directly" },
+            { "name": "js-beautify", "ref": "pip3 install jsbeautifier" }
+        ]
+    },
+    "Ionic Cordova": {
+        "source": "assets/www/ (HTML / CSS / JavaScript source, readable after unzip)",
+        "tools": [
+            { "name": "unzip", "ref": "extract assets/www/ directly" },
+            { "name": "js-beautify", "ref": "pip3 install jsbeautifier" }
+        ]
+    },
+    "Flutter": {
+        "source": "lib/<abi>/libapp.so (AOT) or assets/flutter_assets/kernel_blob.bin (Dart source, debug builds)",
+        "tools": [
+            { "name": "Blutter", "ref": "https://github.com/worawit/blutter" },
+            { "name": "reFlutter", "ref": "https://github.com/ptswarm/reFlutter" },
+            { "name": "Flutter Extractor", "ref": "https://github.com/Rondalal/flutter_extractor" }
+        ]
+    },
+    "ReactNative": {
+        "source": "assets/index.android.bundle (minified JavaScript)",
+        "tools": [
+            { "name": "js-beautify", "ref": "pip3 install jsbeautifier" },
+            { "name": "react-native-decompiler", "ref": "https://www.npmjs.com/package/react-native-decompiler" }
+        ]
+    },
+    "ReactNative compiled with Hermes": {
+        "source": "assets/index.android.bundle (Hermes bytecode, HBC) + lib/<abi>/libhermes.so",
+        "tools": [
+            { "name": "hbctool", "ref": "pip3 install hbctool  (https://github.com/bongtrop/hbctool)" },
+            { "name": "hbcdump", "ref": "Hermes bytecode disassembler (shipped with Hermes)" },
+            { "name": "r2hermes", "ref": "https://github.com/radareorg/r2hermes" }
+        ]
+    },
+    "Unity": {
+        "source": "assets/bin/Data/Managed/*.dll (Mono) or assets/bin/Data/Managed/Metadata/global-metadata.dat + lib/<abi>/libil2cpp.so (IL2CPP)",
+        "tools": [
+            { "name": "ILSpy", "ref": "brew install --cask ilspy" },
+            { "name": "dotPeek", "ref": "JetBrains dotPeek" },
+            { "name": "Il2CppDumper", "ref": "https://github.com/Perfare/Il2CppDumper  (IL2CPP builds)" }
+        ]
+    },
+    "Xamarin": {
+        "source": "assemblies/*.dll (plain, XALZ-compressed, or packed in assemblies.blob)",
+        "tools": [
+            { "name": "ILSpy", "ref": "brew install --cask ilspy" },
+            { "name": "dotPeek", "ref": "JetBrains dotPeek" },
+            { "name": "pyxamstore", "ref": "https://github.com/jakev/pyxamstore  (unpack assemblies.blob store)" },
+            { "name": "xamarin-decompress", "ref": "https://github.com/x41sec/tools (decompress XALZ .dll)" }
+        ]
+    },
+    ".NET MAUI": {
+        "source": "assemblies/*.dll (plain or in assemblies.blob) or lib/<abi>/libaot-*.dll.so (AOT)",
+        "tools": [
+            { "name": "ilspycmd", "ref": "dotnet tool install -g ilspycmd" },
+            { "name": "ILSpy", "ref": "brew install --cask ilspy" },
+            { "name": "dotPeek", "ref": "JetBrains dotPeek" },
+            { "name": "pyxamstore", "ref": "https://github.com/jakev/pyxamstore  (unpack assemblies.blob store)" }
+        ]
+    },
+    "Kony": {
+        "source": "lib/<abi>/libkonyjsvm.so + bundled JavaScript (Kony JS VM)",
+        "tools": [
+            { "name": "konyutils", "ref": "https://github.com/CenturionInfoSec/konyutils" }
+        ]
+    },
+    "Corona SDK": {
+        "source": "resource.car / resource.corona-archive (compiled Lua bytecode)",
+        "tools": [
+            { "name": "car extractor", "ref": "unpack resource.car archive" },
+            { "name": "unluac", "ref": "https://github.com/HeroesGrave/unluac  (decompile Lua bytecode)" }
+        ]
+    }
+}
