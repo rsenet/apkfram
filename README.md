@@ -38,6 +38,9 @@ $ python3 apkFram.py --file examples/ReactNativeHermes.apk
 $ python3 apkFram.py --file examples/tink.apk
 [!] Xamarin seems to be the best probability
 
+$ python3 apkFram.py --file examples/maui.apk
+[!] .NET MAUI seems to be the best answer
+
 $ python3 apkFram.py --file examples/Unity_Loot\ Hunters.apk
 [!] Unity seems to be the best probability
 
@@ -60,6 +63,7 @@ Currently supported frameworks:
 * ReactNative compiled with Hermes
 * Unity
 * Xamarin
+* .NET MAUI
 * Kony
 * Corona SDK
 

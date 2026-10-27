@@ -16,13 +16,48 @@
         "framework": "Xamarin"
     },
     {
+        "file": "assemblies/mscorlib.dll",
+        "framework": "Xamarin",
+        "match": "contains",
+        "weight": 10
+    },
+    {
         "file": "assemblies/assemblies.manifest",
         "framework": "Xamarin"
     },
     {
         "file": "assemblies/assemblies.blob",
         "framework": "Xamarin"
-    },    
+    },
+    {
+        "file": "assemblies/Microsoft.Maui.dll",
+        "framework": ".NET MAUI",
+        "weight": 10
+    },
+    {
+        "file": "assemblies/Microsoft.Maui.Controls.dll",
+        "framework": ".NET MAUI",
+        "weight": 10
+    },
+    {
+        "file": "libaot-Microsoft.Maui.dll.so",
+        "framework": ".NET MAUI",
+        "match": "contains",
+        "weight": 10
+    },
+    {
+        "file": "libaot-Microsoft.Maui.Controls.dll.so",
+        "framework": ".NET MAUI",
+        "match": "contains",
+        "weight": 10
+    },
+    {
+        "file": "assemblies/assemblies.blob",
+        "framework": ".NET MAUI",
+        "match": "scan",
+        "pattern": "Microsoft.Maui",
+        "weight": 10
+    },
     {
         "file": "assets/www/svg/logo-ionic.svg",
         "framework": "Ionic Cordova"
