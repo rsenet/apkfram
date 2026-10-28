@@ -58,7 +58,7 @@ $ python3 apkfram.py --file examples/Corona.apk
 With `-v` / `--verbose`, apkFram also prints where the source code lives and the tools needed to read it, based on the detected framework:
 
 ```bash
-$ python3 apkFram.py --file examples/tracio.apk --verbose
+$ python3 apkFram.py --file examples/net_maui.apk --verbose
 [!] .NET MAUI seems to be the best answer
 [*] Signals matched: libaot-Microsoft.Maui.dll.so, libaot-Microsoft.Maui.Controls.dll.so
 [*] Source code location: assemblies/*.dll (plain or in assemblies.blob) or lib/<abi>/libaot-*.dll.so (AOT)
